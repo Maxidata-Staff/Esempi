@@ -1,0 +1,487 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ProgrammaDiEsempio
+</name>
+</assembly>
+<members>
+<member name="T:ProgrammaDiEsempio.Constants">
+ <summary>
+ Modulo contenente le costanti e le enumerazioni utilizzate da Mago.NET per TransferMNET.
+ 
+ Questo file contiene:
+ - Costanti per i tipi di riferimento e configurazioni standard
+ - Enumerazioni per tutti i valori numerici utilizzati da Mago.NET
+ - Codici per documenti, clienti, fornitori, pagamenti e altre entità
+ 
+ IMPORTANTE: Questi valori devono corrispondere esattamente ai codici
+ configurati nel database Mago.NET dell'azienda di destinazione.
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_ReferencesPrintType_STANDARD">
+ <summary>Tipo di stampa standard per i riferimenti</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_LotSelection_STANDARD">
+ <summary>Selezione lotti standard</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_DebitFreeSamplesTaxAmount_IVASUOMAGGI">
+ <summary>Addebito IVA su omaggi</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_SegnoContabile_DARE">
+ <summary>Segno contabile: Dare</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_SegnoContabile_AVERE">
+ <summary>Segno contabile: Avere</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_Presentation_SALVOBUONFINE">
+ <summary>Presentazione: Salvo buon fine</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_Maturazione_SULFATTURATO">
+ <summary>Maturazione: Sul fatturato</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_Transaction_ACQVEND">
+ <summary>Transazione: Acquisto/Vendita</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_DeliveryTerms_FRANCOFABBRICA">
+ <summary>Condizioni di consegna: Franco fabbrica</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_ModeOfTransport_STRADALE">
+ <summary>Modalità di trasporto: Stradale</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.Constants.eMago_Operation_ACQFINALE">
+ <summary>Operazione: Acquisto finale</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_CustSuppType">
+ <summary>
+ Definisce il tipo di soggetto: Cliente o Fornitore
+ Utilizzato per distinguere tra clienti e fornitori nell'anagrafica
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_CustSuppType.CLIENTE">
+ <summary>Soggetto di tipo Cliente</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_CustSuppType.FORNITORE">
+ <summary>Soggetto di tipo Fornitore</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_CustSuppKind">
+ <summary>
+ Definisce la tipologia fiscale del cliente/fornitore
+ Importante per la gestione dell'IVA e delle dichiarazioni fiscali
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_CustSuppKind.Nazionale">
+ <summary>Cliente/Fornitore nazionale (Italia)</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_CustSuppKind.CEE">
+ <summary>Cliente/Fornitore della Comunità Europea</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_CustSuppKind.ExtraCEE">
+ <summary>Cliente/Fornitore extra-comunitario</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_Gender">
+ <summary>
+ Definisce il genere per persone fisiche
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_Gender.Maschile">
+ <summary>Persona di genere maschile</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_Gender.Femminile">
+ <summary>Persona di genere femminile</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_SupplierType">
+ <summary>
+ Tipologia specifica per fornitori (equivalente a CustSuppKind)
+ Mantenuto per compatibilità con versioni precedenti
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SupplierType.Italiano">
+ <summary>Fornitore italiano</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SupplierType.CEE">
+ <summary>Fornitore della Comunità Europea</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SupplierType.ExtraCEE">
+ <summary>Fornitore extra-comunitario</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_InstallmentType">
+ <summary>
+ Definisce le modalità di pagamento disponibili per le rate
+ Utilizzato nella configurazione delle scadenze di pagamento
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.Contante">
+ <summary>Pagamento in contanti</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.RimDir">
+ <summary>Rimessa diretta</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.Contrassegno">
+ <summary>Pagamento in contrassegno</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.Cambiale">
+ <summary>Pagamento tramite cambiale</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.RiBa">
+ <summary>Ricevuta bancaria (RiBa)</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.Bonifico">
+ <summary>Bonifico bancario</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.Assegno">
+ <summary>Pagamento con assegno</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.AssegnoCircolare">
+ <summary>Assegno circolare</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.RidSepa">
+ <summary>RID SEPA (addebito diretto)</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.CartaCredito">
+ <summary>Carta di credito</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_InstallmentType.Bancomat">
+ <summary>Bancomat/POS</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_TaxInstallment">
+ <summary>
+ Definisce come l'IVA viene distribuita tra le rate di pagamento
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_TaxInstallment.TraLeRate">
+ <summary>IVA distribuita tra tutte le rate</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_TaxInstallment.PrimaRata">
+ <summary>IVA interamente nella prima rata</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_TaxInstallment.SoloIva">
+ <summary>IVA in rata separata</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_DueDateType">
+ <summary>
+ Definisce il criterio per calcolare la data di scadenza delle rate
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DueDateType.DaIndicare">
+ <summary>Data da indicare manualmente</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DueDateType.DataFattura">
+ <summary>Calcolo basato sulla data fattura</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DueDateType.FineMese">
+ <summary>Calcolo a fine mese</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_RoundingType">
+ <summary>
+ Modalità di arrotondamento per gli importi
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_RoundingType.Nessuno">
+ <summary>Nessun arrotondamento (default)</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_RoundingType.Eccesso">
+ <summary>Arrotondamento per eccesso</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_RoundingType.Difetto">
+ <summary>Arrotondamento per difetto</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_RoundingType.Matematico">
+ <summary>Arrotondamento matematico (valore assoluto)</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_RoundingType.Matematicoconsegno">
+ <summary>Arrotondamento matematico con segno</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_DocumentAcqType">
+ <summary>
+ Tipi di documento per documenti di acquisto
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DocumentAcqType.Fattura">
+ <summary>Fattura di acquisto</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DocumentAcqType.NotaCreditoRicevuta">
+ <summary>Nota di credito ricevuta</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_DocumentType">
+ <summary>
+ Tipi di documento per documenti di vendita
+ Utilizzato per specificare il tipo di documento da creare
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DocumentType.Fattura">
+ <summary>Fattura di vendita standard</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DocumentType.FatturaAccompagnatoria">
+ <summary>Fattura accompagnatoria (con DDT)</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DocumentType.NotaAccredito">
+ <summary>Nota di credito/accredito</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DocumentType.NotaDebito">
+ <summary>Nota di debito</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DocumentType.RicevutaFiscale">
+ <summary>Ricevuta fiscale</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DocumentType.Acconto">
+ <summary>Fattura di acconto</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_SaleType">
+ <summary>
+ Tipologia di vendita per la gestione di omaggi e promozioni
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SaleType.Omaggio">
+ <summary>Omaggio senza imponibile</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SaleType.Omaggio_imponibile">
+ <summary>Omaggio con imponibile</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SaleType.Promozione">
+ <summary>Vendita promozionale</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SaleType.Sconto_merce">
+ <summary>Sconto merce</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SaleType.Normale">
+ <summary>Vendita normale (default)</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_LineType">
+ <summary>
+ Tipi di riga per i dettagli dei documenti
+ Definisce la natura della riga nel documento
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_LineType.Nota">
+ <summary>Riga di tipo nota/commento</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_LineType.Riferimento">
+ <summary>Riga di riferimento</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_LineType.Servizio">
+ <summary>Riga per servizi/prestazioni</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_LineType.Merce">
+ <summary>Riga per merci/prodotti (default)</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_LineType.Descrittiva">
+ <summary>Riga puramente descrittiva</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_Nature">
+ <summary>
+ Natura dell'articolo per la gestione dell'inventario
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_Nature.Semilavorato">
+ <summary>Articolo semilavorato</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_Nature.Prodottofinito">
+ <summary>Prodotto finito</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_Nature.Acquisto">
+ <summary>Articolo di acquisto (default)</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_ClosingType">
+ <summary>
+ Modalità di chiusura delle partite contabili
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_ClosingType.Normale">
+ <summary>Chiusura normale</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_ClosingType.Abbuono">
+ <summary>Chiusura per abbuono</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_ClosingType.Riapertura">
+ <summary>Riapertura partita</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_ClosingType.DiffCambio">
+ <summary>Differenza cambio</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_ClosingType.Pereccedenza">
+ <summary>Per eccedenza</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_ClosingType.Ritenuta">
+ <summary>Ritenuta</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_SpecieArchivio">
+ <summary>
+ Specie di archivio per la classificazione dei documenti
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SpecieArchivio.DocVendita">
+ <summary>Documento di vendita</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_SpecieArchivio.DocAcquisto">
+ <summary>Documento di acquisto</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_TipoRata">
+ <summary>
+ Tipologia di rata per la gestione delle scadenze
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_TipoRata.APERTURA">
+ <summary>Rata di apertura</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_TipoRata.CHIUSURA">
+ <summary>Rata di chiusura</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.eMago_DeclType">
+ <summary>
+ Tipologia di dichiarazione per operazioni speciali
+ Utilizzato per dichiarazioni doganali e operazioni intracomunitarie
+ </summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DeclType.SingleOperation">
+ <summary>Operazione singola</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DeclType.LimitAmount">
+ <summary>Importo limite</summary>
+</member>
+<member name="F:ProgrammaDiEsempio.eMago_DeclType.FromDateToDate">
+ <summary>Da data a data (default)</summary>
+</member>
+<member name="T:ProgrammaDiEsempio.Program">
+ <summary>
+ Programma di esempio per dimostrare l'utilizzo della libreria Maxidata.TransferMNET.dll
+ per la sincronizzazione delle fatture con Mago.NET.
+ 
+ Questo esempio replica la logica essenziale del metodo SyncInvoice utilizzando:
+ - La classe MagoConnectionHelper per la gestione delle connessioni
+ - Il pattern mdInvoiceList per la creazione delle fatture
+ - Il pattern mdCustomersList per la gestione dei clienti
+ - La gestione degli errori centralizzata
+ 
+ IMPORTANTE: Prima dell'utilizzo in produzione, configurare tutti i parametri
+ nella sezione "PARAMETRI DI CONFIGURAZIONE" indicata di seguito.
+ </summary>
+</member>
+<member name="M:ProgrammaDiEsempio.Program.Main">
+ <summary>
+ Metodo principale del programma di esempio.
+ Dimostra il processo completo di sincronizzazione delle fatture con Mago.NET:
+ 1. Configurazione e apertura della connessione
+ 2. Verifica e creazione clienti
+ 3. Creazione del container per le fatture
+ 4. Aggiunta di fatture di esempio con dettagli
+ 5. Scrittura definitiva dei dati a Mago.NET
+ 6. Chiusura della connessione e pulizia risorse
+ </summary>
+</member>
+<member name="T:ProgrammaDiEsempio.MagoConnectionHelper">
+ <summary>
+ Classe helper per la gestione delle connessioni a Mago.NET tramite la libreria TransferMNET.
+ 
+ Questa classe fornisce:
+ - Gestione centralizzata delle connessioni al web service Mago.NET
+ - Gestione degli errori con messaggi dettagliati
+ - Metodi di utilità per operazioni comuni
+ - Configurazione automatica dei parametri di logging
+ 
+ Utilizzo tipico:
+ 1. Creare un'istanza con i parametri di connessione
+ 2. Chiamare OpenConnection() per stabilire la connessione
+ 3. Eseguire le operazioni richieste (sync fatture, clienti, etc.)
+ 4. Chiamare CloseConnection() per rilasciare le risorse
+ </summary>
+</member>
+<member name="P:ProgrammaDiEsempio.MagoConnectionHelper.IP">
+ <summary>Indirizzo IP del server Mago.NET</summary>
+</member>
+<member name="P:ProgrammaDiEsempio.MagoConnectionHelper.Instance">
+ <summary>Nome dell'istanza Mago.NET (es. "MAGO4")</summary>
+</member>
+<member name="P:ProgrammaDiEsempio.MagoConnectionHelper.Company">
+ <summary>Codice azienda presente in Mago.NET</summary>
+</member>
+<member name="P:ProgrammaDiEsempio.MagoConnectionHelper.Username">
+ <summary>Username per l'autenticazione</summary>
+</member>
+<member name="P:ProgrammaDiEsempio.MagoConnectionHelper.Password">
+ <summary>Password per l'autenticazione</summary>
+</member>
+<member name="P:ProgrammaDiEsempio.MagoConnectionHelper.License">
+ <summary>Codice licenza Mago.NET</summary>
+</member>
+<member name="P:ProgrammaDiEsempio.MagoConnectionHelper.LogDirectory">
+ <summary>Directory per i file di log del TransferMNET</summary>
+</member>
+<member name="P:ProgrammaDiEsempio.MagoConnectionHelper.IsConnected">
+ <summary>
+ Indica se la connessione al web service è attiva
+ </summary>
+</member>
+<member name="M:ProgrammaDiEsempio.MagoConnectionHelper.#ctor">
+ <summary>
+ Costruttore di base. Inizializza la directory di log predefinita.
+ </summary>
+</member>
+<member name="M:ProgrammaDiEsempio.MagoConnectionHelper.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Costruttore con parametri di connessione.
+ </summary>
+ <param name="ip">Indirizzo IP del server Mago.NET</param>
+ <param name="instance">Nome istanza Mago.NET</param>
+ <param name="company">Codice azienda</param>
+ <param name="username">Username di accesso</param>
+ <param name="password">Password di accesso</param>
+ <param name="license">Codice licenza</param>
+</member>
+<member name="M:ProgrammaDiEsempio.MagoConnectionHelper.OpenConnection">
+ <summary>
+ Apre una nuova connessione al web service Mago.NET.
+ 
+ Questo metodo:
+ 1. Valida tutti i parametri di connessione richiesti
+ 2. Crea la directory di log se non esiste
+ 3. Inizializza la connessione tramite WSExhibitor
+ 4. Configura i parametri di logging per TransferMNET
+ </summary>
+ <exception cref="T:System.ArgumentException">Viene sollevata se mancano parametri obbligatori</exception>
+ <exception cref="T:System.Exception">Viene sollevata per errori di connessione o configurazione</exception>
+</member>
+<member name="M:ProgrammaDiEsempio.MagoConnectionHelper.CloseConnection">
+ <summary>
+ Chiude la connessione al web service Mago.NET e rilascia le risorse.
+ 
+ Questo metodo è sicuro da chiamare anche se la connessione non è attiva.
+ Gli errori durante la chiusura vengono loggati ma non rilanciano eccezioni
+ per permettere la corretta pulizia delle risorse.
+ </summary>
+</member>
+<member name="M:ProgrammaDiEsempio.MagoConnectionHelper.GetError(System.Int32,System.Int32)">
+ <summary>
+ Metodo centralizzato per la gestione degli errori restituiti da Mago.NET.
+ 
+ Questo metodo traduce i codici di errore numerici in messaggi descrittivi
+ e solleva eccezioni appropriate con informazioni dettagliate per il debugging.
+ </summary>
+ <param name="errNumber">Codice di errore restituito da Mago.NET</param>
+ <param name="returnLogin">Codice di errore aggiuntivo per problemi di login</param>
+ <exception cref="T:System.Exception">Viene sollevata per tutti i codici di errore diversi da 0</exception>
+</member>
+<member name="M:ProgrammaDiEsempio.MagoConnectionHelper.TestConnection">
+ <summary>
+ Testa la connessione con i parametri specificati senza mantenere la connessione aperta.
+ 
+ Utile per verificare la correttezza dei parametri di configurazione
+ prima di avviare operazioni più complesse.
+ </summary>
+ <returns>True se la connessione è riuscita, False altrimenti</returns>
+</member>
+<member name="M:ProgrammaDiEsempio.MagoConnectionHelper.CustomerExists(System.String)">
+ <summary>
+ Verifica se un cliente esiste già nel database Mago.NET.
+ 
+ NOTA: Questo è un metodo di esempio. In un'implementazione reale,
+ dovrebbe contenere la logica per interrogare il database Mago.NET
+ e verificare l'esistenza del cliente specificato.
+ </summary>
+ <param name="customerCode">Codice cliente da verificare</param>
+ <returns>True se il cliente esiste, False altrimenti</returns>
+ <exception cref="T:System.InvalidOperationException">Viene sollevata se non c'è una connessione attiva</exception>
+ <exception cref="T:System.Exception">Viene sollevata per errori durante la verifica</exception>
+</member>
+</members>
+</doc>

@@ -1,0 +1,10 @@
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\bin\Debug\ProgrammaDiEsempio.exe
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\bin\Debug\ProgrammaDiEsempio.pdb
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\bin\Debug\ProgrammaDiEsempio.xml
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\bin\Debug\Maxidata.TransferMNET.dll
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\obj\Debug\ProgrammaDiEsempio.vbproj.AssemblyReference.cache
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\obj\Debug\ProgrammaDiEsempio.vbproj.CoreCompileInputs.cache
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\obj\Debug\Programm.13336BAF.Up2Date
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\obj\Debug\ProgrammaDiEsempio.exe
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\obj\Debug\ProgrammaDiEsempio.xml
+C:\Staff\MedLAn\App\ProgrammaDiEsempio\obj\Debug\ProgrammaDiEsempio.pdb
