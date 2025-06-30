@@ -26,7 +26,7 @@ Module Program
     ' Modificare questi valori con i parametri reali del server Mago.NET
     Public Const MAGO_SERVER_IP As String = "192.168.100.5"           ' Indirizzo IP del server Mago.NET
     Public Const MAGO_INSTANCE As String = "MAGO4"                    ' Nome istanza Mago.NET
-    Public Const MAGO_COMPANY As String = "MAD_MAGO4"                 ' Codice azienda
+    Public Const MAGO_COMPANY As String = "MAD_TEST"                 ' Codice azienda
     Public Const MAGO_USERNAME As String = "MAD02"                    ' Username per l'accesso
     Public Const MAGO_PASSWORD As String = ""                         ' Password per l'accesso
     Public Const MAGO_LICENSE As String = "0110C137"                  ' Codice licenza
