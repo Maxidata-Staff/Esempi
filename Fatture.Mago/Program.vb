@@ -21,13 +21,13 @@ Module Program
     '==============================================================================
     ' Questi parametri devono essere configurati secondo l'ambiente di destinazione
     ' prima dell'utilizzo in produzione.
-    
+
     ' >>> CONFIGURAZIONE CONNESSIONE MAGO.NET <<<
     ' Modificare questi valori con i parametri reali del server Mago.NET
-    Public Const MAGO_SERVER_IP As String = "10.21.12.27"              ' Indirizzo IP del server Mago.NET
-    Public Const MAGO_INSTANCE As String = "MAGO4"                     ' Nome istanza Mago.NET
-    Public Const MAGO_COMPANY As String = "DEMO_Mago4"                 ' Codice azienda
-    Public Const MAGO_USERNAME As String = "Maxidata_1"               ' Username per l'accesso
+    Public Const MAGO_SERVER_IP As String = "192.168.100.5"           ' Indirizzo IP del server Mago.NET
+    Public Const MAGO_INSTANCE As String = "MAGO4"                    ' Nome istanza Mago.NET
+    Public Const MAGO_COMPANY As String = "MAD_MAGO4"                 ' Codice azienda
+    Public Const MAGO_USERNAME As String = "MAD02"                    ' Username per l'accesso
     Public Const MAGO_PASSWORD As String = ""                         ' Password per l'accesso
     Public Const MAGO_LICENSE As String = "0110C137"                  ' Codice licenza
 
@@ -38,12 +38,12 @@ Module Program
     Public Const REGISTRO_IVA As String = "VEN"                       ' Registro IVA di vendita
     Public Const MODELLO_CONTABILE As String = "FE"                   ' Modello contabile per fatture
     Public Const CODICE_IVA_STANDARD As String = "22"                 ' Codice IVA per aliquota 22%
-    
+
     ' >>> CONFIGURAZIONE DOCUMENTI <<<
     ' Codici per la tipologia di documenti da creare
     Public Const TIPO_DOCUMENTO_FATTURA As String = "22151169"        ' Tipo documento fattura elettronica
 
-    
+
     '==============================================================================
 
     ''' <summary>
@@ -197,11 +197,18 @@ Module Program
                 .TotalAmountSpecified = True
                 .PayableAmount = 122.0                              ' Importo da pagare
                 .PayableAmountSpecified = True
-                .FreeSamples = 0                                    ' Omaggi
-                .FreeSamplesSpecified = True
                 .StampsCharges = 0                                  ' Bolli
                 .StampsChargesSpecified = True
-                .TBModified = Date.Now.ToString("yyyy-MM-dd HH:mm:ss")
+
+                '--> Possibilità di aggiungere importi in omaggio
+                .FreeSamples = 0
+                .FreeSamplesSpecified = True
+
+                '--> Possibilità di aggiungere sconti
+                '.DiscountsIsAuto = "false"
+                '.Discounts = f.Discounts
+                '.DiscountsSpecified = True
+                '.TBModified = CStr(Date.Now)
             End With
 
             Console.WriteLine($"Fattura configurata: FAT001 - Cliente: {codiceCliente} - Importo: EUR 100.00")
@@ -296,7 +303,7 @@ Module Program
             Console.WriteLine()
             Console.WriteLine("Dettagli tecnici:")
             Console.WriteLine(ex.ToString())
-            
+
         Finally
             '==========================================================================
             ' PULIZIA RISORSE E CHIUSURA CONNESSIONE
@@ -308,7 +315,7 @@ Module Program
                 connectionHelper.CloseConnection()
                 Console.WriteLine("Connessione chiusa correttamente")
             End If
-            
+
             Console.WriteLine()
             Console.WriteLine("Operazione terminata. Premere un tasto per uscire...")
             Console.ReadKey()

@@ -16,37 +16,37 @@ Public Module Constants
     '==========================================================================
     ' Queste costanti definiscono i comportamenti standard per vari aspetti
     ' del sistema Mago.NET. Non modificare senza consultare la documentazione.
-    
+
     ''' <summary>Tipo di stampa standard per i riferimenti</summary>
     Public Const eMago_ReferencesPrintType_STANDARD = "524293"
-    
+
     ''' <summary>Selezione lotti standard</summary>
     Public Const eMago_LotSelection_STANDARD = "8454147"
-    
+
     ''' <summary>Addebito IVA su omaggi</summary>
     Public Const eMago_DebitFreeSamplesTaxAmount_IVASUOMAGGI = "3276802"
 
     ''' <summary>Segno contabile: Dare</summary>
     Public Const eMago_SegnoContabile_DARE = "4980736"
-    
+
     ''' <summary>Segno contabile: Avere</summary>
     Public Const eMago_SegnoContabile_AVERE = "4980737"
 
     ''' <summary>Presentazione: Salvo buon fine</summary>
     Public Const eMago_Presentation_SALVOBUONFINE = "1376256"
-    
+
     ''' <summary>Maturazione: Sul fatturato</summary>
     Public Const eMago_Maturazione_SULFATTURATO = "3473408"
-    
+
     ''' <summary>Transazione: Acquisto/Vendita</summary>
     Public Const eMago_Transaction_ACQVEND = "5767168"
-    
+
     ''' <summary>Condizioni di consegna: Franco fabbrica</summary>
     Public Const eMago_DeliveryTerms_FRANCOFABBRICA = "5963781"
-    
+
     ''' <summary>Modalità di trasporto: Stradale</summary>
     Public Const eMago_ModeOfTransport_STRADALE = "5832706"
-    
+
     ''' <summary>Operazione: Acquisto finale</summary>
     Public Const eMago_Operation_ACQFINALE = "5898242"
 
