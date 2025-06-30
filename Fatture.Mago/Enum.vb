@@ -91,6 +91,16 @@ Public Enum eMago_Gender
 End Enum
 
 ''' <summary>
+''' Definisce il genere per persone fisiche
+''' </summary>
+Public Enum eMago_EIDocumentType
+    ''' <summary>Fattura Normale</summary>
+    Fattura = 22151172
+    ''' <summary>Esente Totale</summary>
+    EsenteTotale = 22151169
+End Enum
+
+''' <summary>
 ''' Tipologia specifica per fornitori (equivalente a CustSuppKind)
 ''' Mantenuto per compatibilità con versioni precedenti
 ''' </summary>

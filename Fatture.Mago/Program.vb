@@ -38,10 +38,7 @@ Module Program
     Public Const REGISTRO_IVA As String = "VEN"                       ' Registro IVA di vendita
     Public Const MODELLO_CONTABILE As String = "FE"                   ' Modello contabile per fatture
     Public Const CODICE_IVA_STANDARD As String = "22"                 ' Codice IVA per aliquota 22%
-
-    ' >>> CONFIGURAZIONE DOCUMENTI <<<
-    ' Codici per la tipologia di documenti da creare
-    Public Const TIPO_DOCUMENTO_FATTURA As String = "22151169"        ' Tipo documento fattura elettronica
+    Public Const CodIVA_Bolli As String = "ES15"                      ' Codice IVA per BOLLI
 
 
     '==============================================================================
@@ -177,7 +174,8 @@ Module Program
                 .DocumentDate = Date.Now.ToString("yyyy-MM-dd")     ' Data documento
                 .DocumentDateSpecified = True
                 .EIDocumentType = New Maxidata_Invoice.SaleDocumentEIDocumentType
-                .EIDocumentType.Value = TIPO_DOCUMENTO_FATTURA      ' Tipo fattura elettronica
+                .EIDocumentType.Value = CInt(eMago_EIDocumentType.Fattura).ToString ' Tipo fattura elettronica
+                '                           Se Esente "eMago_EIDocumentType.EsenteTotale"
                 .CustSuppType.Value = CInt(eMago_CustSuppType.CLIENTE).ToString
                 .CustSupp = codiceCliente                           ' Collegamento al cliente
                 .Payment = CODICE_PAGAMENTO                         ' Condizioni di pagamento
@@ -199,6 +197,7 @@ Module Program
                 .PayableAmountSpecified = True
                 .StampsCharges = 0                                  ' Bolli
                 .StampsChargesSpecified = True
+                .StampsChargesTaxCode = CodIVA_Bolli                ' Codice IVA per BOLLI
 
                 '--> Possibilità di aggiungere importi in omaggio
                 .FreeSamples = 0
